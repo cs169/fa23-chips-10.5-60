@@ -1,4 +1,4 @@
-
+*.org
 *.rbc
 capybara-*.html
 .rspec
