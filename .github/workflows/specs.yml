@@ -10,32 +10,34 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-18.04
+          - ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Decrypt large secret
-        run: ./decrypt_secret.sh
+      - name: set master key
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-        - name: Cache multiple paths
-          uses: actions/cache@v2
-          with:
-            path: |-
-              node_modules
-              vendor/bundle
-            key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 12.13.1
-        - uses: ruby/setup-ruby@v1
-          with:
-            bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-        - run: gem install bundler:2.1.4
-        - run: npm install -g yarn@1.22.4
-        - run: bundle install
-        - run: yarn install
-        - run: bundle exec rake db:setup
-        - run: bundle exec rake db:test:prepare
-        - run: bundle exec rspec
-        - run: bundle exec cucumber
+
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with:
+          path: |-
+            node_modules
+            vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 13.14.0
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: gem install bundler:2.1.4
+      - run: npm install -g yarn@1.19.2
+      - run: bundle install
+      - run: yarn install
+      - run: bundle exec rake db:setup
+      - run: bundle exec rake db:test:prepare
+      - run: bundle exec rspec
+      - run: bundle exec cucumber
