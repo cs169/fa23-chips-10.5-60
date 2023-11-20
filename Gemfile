@@ -62,6 +62,10 @@ group :development, :test do
   # Generate different sizes of favicon from a single image.
   gem 'rails_real_favicon'
 
+  # Add support for canned API responses in tests
+  gem 'vcr'
+  gem 'webmock'
+
   # Report coverage.
   gem 'codecov', require: false
   gem 'simplecov'
