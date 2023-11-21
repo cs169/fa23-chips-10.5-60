@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h1 class="fst-italic">
+                    <%= @representative.name %>
+                </h1>
+                <p> <%= @representative.title %> </p>
+                <p> <%= @representative.street %> </p>
+                <p> <%= @representative.city %> </p>
+                <p> <%= @representative.state %> </p>
+                <p> <%= @representative.zip %> </p>
+                <p> <%= @representative.political_party %> </p>
+                <div class="container">
+                    <img src="<%= @representative.photo_url %>"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col text-center">
+        <%= link_to 'Back', :back, class: 'btn btn-secondary' %>
+    </div>
+</div>

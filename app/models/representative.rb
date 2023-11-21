@@ -5,23 +5,32 @@ class Representative < ApplicationRecord
 
   def self.civic_api_to_representative_params(rep_info)
     reps = []
-
-    rep_info.officials.each_with_index do |official, index|
-      ocdid_temp = ''
-      title_temp = ''
-
-      rep_info.offices.each do |office|
-        if office.official_indices.include? index
-          title_temp = office.name
-          ocdid_temp = office.division_id
-        end
+    rep_info.offices.each do |office|
+      office.official_indices.each do |rep_idx|
+        rep = get_rep_from_official(rep_info.officials[rep_idx], office)
+        reps.push(rep)
       end
-
-      rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-          title: title_temp })
-      reps.push(rep)
     end
-
     reps
   end
+
+  def self.get_rep_from_official(official, office)
+    address = official&.address
+    rep_attrs = {
+    title:           office&.division_id || '',
+    ocdid:           office&.division_id || '',
+
+    name:            official&.name || '',
+    political_party: official&.party || '',
+
+    street:          address&.[](0)&.line1 || '',
+    city:            address&.[](0)&.city || '',
+    state:           address&.[](0)&.state || '',
+    zip:             address&.[](0)&.zip || '',
+
+    photo_url:       official&.photo_url || ''
+    }
+    Representative.find_or_create_by(rep_attrs)
+  end
+
 end
