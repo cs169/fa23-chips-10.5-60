@@ -579,6 +579,7 @@ module SeedData
                     zip: 				'95814',
                     political_party: 	'Democratic Party',
                     photo_url: 		'http://www.ltg.ca.gov/images/newsimages/i2.png',
+                    title: 			'Governor of California'
                 },
                 news_items: [
                     {

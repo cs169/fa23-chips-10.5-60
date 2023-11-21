@@ -5,12 +5,9 @@
                 <h1 class="fst-italic">
                     <%= @representative.name %>
                 </h1>
-                <p> <%= @representative.title %> </p>
-                <p> <%= @representative.street %> </p>
-                <p> <%= @representative.city %> </p>
-                <p> <%= @representative.state %> </p>
-                <p> <%= @representative.zip %> </p>
-                <p> <%= @representative.political_party %> </p>
+                <p> Official Title: <%= @representative.title %> </p>
+                <p> Member of the <%= @representative.political_party %> </p>
+                <p> Address: <%= @representative.street %>, <%= @representative.city %>, <%= @representative.state %>, <%= @representative.zip %> </p>
                 <div class="container">
                     <img src="<%= @representative.photo_url %>"/>
                 </div>
