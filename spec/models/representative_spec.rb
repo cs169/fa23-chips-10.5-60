@@ -8,8 +8,7 @@ describe Representative, :vcr do
     service = Google::Apis::CivicinfoV2::CivicInfoService.new
     service.key = Rails.application.credentials[:GOOGLE_API_KEY]
     result = service.representative_info_by_address(address: 'berkeley')
-    reps = Representative.civic_api_to_representative_params(result)
-    reps.each { |rep|  puts rep.to_yaml }
+    reps = described_class.civic_api_to_representative_params(result)
+    reps.each { |rep| puts rep.to_yaml }
   end
 end
-

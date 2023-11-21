@@ -99,7 +99,12 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
   config.around(:each, :vcr) do |example|
-    name = example.metadata[:full_description].split(/\s+/, 2).join('/').underscore.tr(' ', '_').gsub(/[^\w\/]+/, '').gsub(/\/$/, '')
+    name = example.metadata[:full_description]
+                  .split(/\s+/, 2)
+                  .join('/')
+                  .underscore.tr(' ', '_')
+                  .gsub(%r{/[^\w/]+/}, '')
+                  .gsub(%r{//$/}, '')
     VCR.use_cassette(name, record: :new_episodes) do
       example.call
     end
