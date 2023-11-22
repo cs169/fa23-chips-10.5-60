@@ -1,3 +1,4 @@
+@vcr
 Feature: Navigate to a representatives page
 
 Scenario: A user can navigate to a representatives page from the search page

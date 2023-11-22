@@ -1,3 +1,4 @@
+@vcr
 Feature: View a representatives page
 
 Scenario: A User can visit a specific representatives page and see their information
