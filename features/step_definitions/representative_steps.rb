@@ -20,10 +20,11 @@ Given(/^I am on a representatives page$/) do
   visit '/representatives/1'
 end
 
-Then(/^I should see the representatives (.*), and "([^"]+)"\.$/) do |content_list, last_item|
+Then(/^I should see the representatives (.*) and "([^"]+)"\.$/) do |content_list, last_item|
   gavin = Representative.find_by(name: 'Gavin Newsom')
   content_list.split(/\s*,\s*/).each do |content|
-    page.should have_content(gavin[content[1..-2]])
+    unquoted = content.gsub!(/"/, '|')
+    expect(page).to have_content(gavin.public_send(unquoted.parameterize.underscore.to_sym))
   end
-  page.should have_content(gavin[last_item])
+  expect(page).to have_content(gavin.public_send(last_item.parameterize.underscore.to_sym))
 end
