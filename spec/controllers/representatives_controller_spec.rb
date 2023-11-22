@@ -9,7 +9,7 @@ describe RepresentativesController, type: :request do
       name:            'Mickey Mouse',
       street:          '110th 1675 North Buena Vista Drive',
       city:            'The Magic Kingdom',
-      state:           'Fl',
+      state:           'FL',
       zip:             '32830',
       political_party: 'Republican Party',
       photo_url:       'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png?20220210025314',
