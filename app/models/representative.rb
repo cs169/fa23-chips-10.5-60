@@ -17,15 +17,15 @@ class Representative < ApplicationRecord
   def self.get_rep_from_official(official, office)
     address = official&.address
     rep_attrs = {
-      title:           safe_access(office, name),
-      ocdid:           safe_access(office, division_id),
-      name:            safe_access(official, name),
-      political_party: safe_access(official, party),
-      street:          safe_list_access(address, line1),
-      city:            safe_list_access(address, city),
-      state:           safe_list_access(address, state),
-      zip:             safe_list_access(address, zip),
-      photo_url:       safe_access(official, photo_url)
+      title:           safe_access(office, :name),
+      ocdid:           safe_access(office, :division_id),
+      name:            safe_access(official, :name),
+      political_party: safe_access(official, :party),
+      street:          safe_list_access(address, :line1),
+      city:            safe_list_access(address, :city),
+      state:           safe_list_access(address, :state),
+      zip:             safe_list_access(address, :zip),
+      photo_url:       safe_access(official, :photo_url)
     }
     Representative.find_or_create_by(rep_attrs)
   end
@@ -34,7 +34,7 @@ class Representative < ApplicationRecord
     object&.public_send(attr) || ''
   end
 
-  def self.safe_list_access(object, _attr)
-    object&.[](0)&.public_send(atttr) || ''
+  def self.safe_list_access(object, attr)
+    object&.[](0)&.public_send(attr) || ''
   end
 end
