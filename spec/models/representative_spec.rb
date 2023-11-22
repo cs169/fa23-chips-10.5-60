@@ -5,11 +5,15 @@ require 'google/apis/civicinfo_v2'
 
 describe Representative, :vcr do
   it 'creates valid representatives from api responses' do
-    service = Google::Apis::CivicinfoV2::CivicInfoService.new
-    service.key = Rails.application.credentials[:GOOGLE_API_KEY]
-    result = service.representative_info_by_address(address: 'berkeley')
+    result = google_api_request('berkeley')
     reps = described_class.civic_api_to_representative_params(result)
-    expect(reps).to_not be_nil
-    expect(Representative.all.length).to_not be(0)
+    expect(reps).not_to be_nil
+    expect(described_class.all.length).not_to be(0)
   end
+end
+
+def google_api_request(address)
+  service = Google::Apis::CivicinfoV2::CivicInfoService.new
+  service.key = Rails.application.credentials[:GOOGLE_API_KEY]
+  service.representative_info_by_address(address: address)
 end
