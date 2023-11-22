@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Representative, type: :model do
+describe Representative, type: :model do
   describe '.civic_api_to_representative_params' do
     before do
       described_class.find_or_create_by(name: 'George Washington', ocdid: 'id1', title: 'President')
@@ -15,7 +17,7 @@ RSpec.describe Representative, type: :model do
 
     context 'when the official already exists' do
       it 'will not create a duplicate rep' do
-        expect { Representative.civic_api_to_representative_params(rep_info) }
+        expect { described_class.civic_api_to_representative_params(rep_info) }
           .to change(described_class, :count).by(1)
       end
     end
