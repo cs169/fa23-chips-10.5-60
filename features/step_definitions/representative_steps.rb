@@ -15,33 +15,7 @@ VCR.configure do |config|
 end
 
 Before do
-  gavin = {
-    name:            'Gavin Newsom',
-    street:          '1303 10th Street',
-    city:            'Sacramento',
-    state:           'CA',
-    zip:             '95814',
-    political_party: 'Democratic Party',
-    photo_url:       'http://www.ltg.ca.gov/images/newsimages/i2.png',
-    title:           'Governor of California'
-  }
-
-  news_items = [
-    {
-      title:       'Newsom Orders Second Shutdown of Restaurants and Indoor Businesses amid COVID-19',
-      description: 'The new order affects 19 California counties with a surging number of coronavirus cases',
-      link:        'https://people.com/human-interest/california-gov-gavin-newsom-orders-second-shutdown-of-restaurants-and-indoor-businesses-amid-covid-19/'
-    },
-    {
-      title:       "Newsom warns that young adults are not 'invincible' to Coronavirus",
-      description: 'Gov. Gavin Newsom said Monday that the surge in coronavirus cases hitting California was due in part to younger people who might believe “they are invincible” but nonetheless are becoming sick from COVID-19.',
-      link:        'https://www.latimes.com/california/story/2020-07-06/young-adult-who-think-they-are-invincible-hit-hard-by-coronavirus-newsom-says'
-    }
-  ]
-  rep = Representative.create(gavin)
-  news_items.each do |news|
-  	rep.news_items << NewsItem.new(news)
-  end
+  create(:representative)
 end
 
 Before('@vcr') do |scenario|
