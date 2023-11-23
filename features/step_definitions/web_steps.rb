@@ -18,6 +18,9 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
+require 'capybara/cucumber'
+require 'capybara/rspec'
+
 
 require 'uri'
 require 'cgi'
@@ -37,9 +40,28 @@ When /^(.*) within (.*[^:])$/ do |step, parent|
 end
 
 # Multi-line step scoper
+When /^(?:|I )click on the "(.+)" collapse button$/ do |button_text|
+  find('button.btn-link', text: button_text).click
+end
+
+Then(/I should be redirected to the search page$/) do
+  # This will wait for the redirect to happen
+  expect(page).to have_current_path('/search?utf8=✓&address=Orange%20County&commit=Search')
+end
+
+When /^(?:|I )click on the link "(.+)"$/ do |link_text|
+  find('a', text: link_text, visible: true).click
+end
+
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
+
+When('I click on the Counties in California button') do
+  find('button[aria-controls="actionmap-state-details-collapse"]', wait: 10).click
+end
+
+
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)

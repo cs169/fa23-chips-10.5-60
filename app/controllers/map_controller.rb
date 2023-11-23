@@ -7,6 +7,15 @@ class MapController < ApplicationController
     @states_by_fips_code = @states.index_by(&:std_fips_code)
   end
 
+  def reroute
+    @state = State.find_by(symbol: params[:state_symbol].upcase)
+    handle_state_not_found && return if @state.nil?
+
+    @county = get_requested_county @state.id
+    handle_county_not_found && return if @state.nil?
+
+    redirect_to search_representatives_path(address:@county.name, commit:"search")
+  end
   # Render the map of the counties of a specific state.
   def state
     @state = State.find_by(symbol: params[:state_symbol].upcase)

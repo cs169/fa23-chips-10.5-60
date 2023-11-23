@@ -15,6 +15,15 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when  /^the California\s?page$/
+      '/state/CA'
+
+    when  /^the Orange County\s?page$/
+      '/state/CA/county/059'
+
+    
+
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
