@@ -10,22 +10,13 @@ class Representative < ApplicationRecord
         rep = get_rep_from_official(rep_info.officials[rep_idx], office)
         reps.push(rep)
       end
-<<<<<<< HEAD
-=======
-
-      # checks for existing rep in Representative, creates new one if doesn't exist
-      already_existing_rep = Representative.find_by(title: title_temp, ocdid: ocdid_temp)
-      if already_existing_rep
-        reps.push(already_existing_rep)
-      else
-        rep = Representative.create!({ name: official.name, ocdid: ocdid_temp, title: title_temp })
-        reps.push(rep)
-      end
->>>>>>> master
     end
     reps
   end
 
+  # This will create duplicates if the reps info changes
+  # At a later date this could be modified to update information
+  # if necessary.
   def self.get_rep_from_official(official, office)
     address = official&.address
     rep_attrs = {
