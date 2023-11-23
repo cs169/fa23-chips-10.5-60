@@ -19,7 +19,10 @@ module NavigationHelpers
       '/state/CA'
 
     when  /^the Orange County\s?page$/
-      '/state/CA/county/059'
+      '/search?address=Orange%20County&commit=Search'
+
+    when  /^the Alameda County\s?page$/
+      '/search?address=Alameda%20County&commit=Search'
 
     
 
