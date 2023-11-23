@@ -14,8 +14,9 @@ class MapController < ApplicationController
     @county = get_requested_county @state.id
     handle_county_not_found && return if @state.nil?
 
-    redirect_to search_representatives_path(address:@county.name, commit:"search")
+    redirect_to search_representatives_path(address: @county.name, commit: 'search')
   end
+
   # Render the map of the counties of a specific state.
   def state
     @state = State.find_by(symbol: params[:state_symbol].upcase)
