@@ -1,0 +1,1030 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=Orange%20County&key=<GOOGLE_CIVIC_API_KEY>
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.4.1 Linux/6.5.6-76060506-generic (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sat, 25 Nov 2023 05:16:25 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.6.6 gdcl/1.4.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Sat, 25 Nov 2023 05:16:26 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "normalizedInput": {
+            "line1": "",
+            "city": "",
+            "state": "CA",
+            "zip": ""
+          },
+          "kind": "civicinfo#representativeInfoResponse",
+          "divisions": {
+            "ocd-division/country:us": {
+              "name": "United States",
+              "officeIndices": [
+                0,
+                1
+              ]
+            },
+            "ocd-division/country:us/state:ca/county:orange": {
+              "name": "Orange County",
+              "officeIndices": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            },
+            "ocd-division/country:us/state:ca": {
+              "name": "California",
+              "officeIndices": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
+            }
+          },
+          "offices": [
+            {
+              "name": "President of the United States",
+              "divisionId": "ocd-division/country:us",
+              "levels": [
+                "country"
+              ],
+              "roles": [
+                "headOfGovernment",
+                "headOfState"
+              ],
+              "officialIndices": [
+                0
+              ]
+            },
+            {
+              "name": "Vice President of the United States",
+              "divisionId": "ocd-division/country:us",
+              "levels": [
+                "country"
+              ],
+              "roles": [
+                "deputyHeadOfGovernment"
+              ],
+              "officialIndices": [
+                1
+              ]
+            },
+            {
+              "name": "U.S. Senator",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "country"
+              ],
+              "roles": [
+                "legislatorUpperBody"
+              ],
+              "officialIndices": [
+                2,
+                3
+              ]
+            },
+            {
+              "name": "Governor of California",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "headOfGovernment"
+              ],
+              "officialIndices": [
+                4
+              ]
+            },
+            {
+              "name": "Lieutenant Governor of California",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "deputyHeadOfGovernment"
+              ],
+              "officialIndices": [
+                5
+              ]
+            },
+            {
+              "name": "CA State Superintendent of Public Instruction",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                6
+              ]
+            },
+            {
+              "name": "CA State Attorney General",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                7
+              ]
+            },
+            {
+              "name": "CA State Insurance Commissioner",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                8
+              ]
+            },
+            {
+              "name": "CA State Treasurer",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                9
+              ]
+            },
+            {
+              "name": "CA State Controller",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                10
+              ]
+            },
+            {
+              "name": "CA Secretary of State",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                11
+              ]
+            },
+            {
+              "name": "CA State Supreme Court Justice",
+              "divisionId": "ocd-division/country:us/state:ca",
+              "levels": [
+                "administrativeArea1"
+              ],
+              "roles": [
+                "judge"
+              ],
+              "officialIndices": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            },
+            {
+              "name": "Orange County Auditor-Controller",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                19
+              ]
+            },
+            {
+              "name": "Orange County Assessor",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                20
+              ]
+            },
+            {
+              "name": "Orange County Treasurer-Tax Collector",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                21
+              ]
+            },
+            {
+              "name": "Orange County District Attorney",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                22
+              ]
+            },
+            {
+              "name": "Orange County Superintendent of Schools",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                23
+              ]
+            },
+            {
+              "name": "Orange County Sheriff-Coroner",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                24
+              ]
+            },
+            {
+              "name": "Orange County Clerk-Recorder",
+              "divisionId": "ocd-division/country:us/state:ca/county:orange",
+              "levels": [
+                "administrativeArea2"
+              ],
+              "roles": [
+                "governmentOfficer"
+              ],
+              "officialIndices": [
+                25
+              ]
+            }
+          ],
+          "officials": [
+            {
+              "name": "Joseph R. Biden",
+              "address": [
+                {
+                  "line1": "1600 Pennsylvania Avenue Northwest",
+                  "city": "Washington",
+                  "state": "DC",
+                  "zip": "20500"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(202) 456-1111"
+              ],
+              "urls": [
+                "https://www.whitehouse.gov/",
+                "https://en.wikipedia.org/wiki/Joe_Biden"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "potus"
+                }
+              ]
+            },
+            {
+              "name": "Kamala D. Harris",
+              "address": [
+                {
+                  "line1": "1600 Pennsylvania Avenue Northwest",
+                  "city": "Washington",
+                  "state": "DC",
+                  "zip": "20500"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(202) 456-1111"
+              ],
+              "urls": [
+                "https://www.whitehouse.gov/",
+                "https://en.wikipedia.org/wiki/Kamala_Harris"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "VP"
+                }
+              ]
+            },
+            {
+              "name": "Alex Padilla",
+              "address": [
+                {
+                  "line1": "B03",
+                  "city": "Washington",
+                  "state": "DC",
+                  "zip": "20510"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(202) 224-3553"
+              ],
+              "urls": [
+                "https://www.padilla.senate.gov/",
+                "https://en.wikipedia.org/wiki/Alex_Padilla"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "SenAlexPadilla"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "SenAlexPadilla"
+                }
+              ]
+            },
+            {
+              "name": "LaPhonza R. Butler",
+              "party": "Democratic Party",
+              "phones": [
+                "(202) 224-3841"
+              ],
+              "urls": [
+                "https://www.butler.senate.gov/"
+              ]
+            },
+            {
+              "name": "Gavin Newsom",
+              "address": [
+                {
+                  "line1": "1303 10th Street",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 445-2841"
+              ],
+              "urls": [
+                "https://www.gov.ca.gov/",
+                "https://en.wikipedia.org/wiki/Gavin_Newsom"
+              ],
+              "photoUrl": "http://www.ltg.ca.gov/images/newsimages/i2.png",
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "CAgovernor"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CAgovernor"
+                }
+              ]
+            },
+            {
+              "name": "Eleni Kounalakis",
+              "address": [
+                {
+                  "line1": "1315 10th Street",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 445-8994"
+              ],
+              "urls": [
+                "https://ltg.ca.gov/",
+                "https://en.wikipedia.org/wiki/Eleni_Kounalakis"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "EleniKounalakis"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CALtGovernor"
+                }
+              ]
+            },
+            {
+              "name": "Tony Thurmond",
+              "address": [
+                {
+                  "line1": "1430 N Street",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(916) 319-0800"
+              ],
+              "urls": [
+                "https://www.cde.ca.gov/eo/",
+                "https://en.wikipedia.org/wiki/Tony_Thurmond"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "CAEducation"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CADeptEd"
+                }
+              ]
+            },
+            {
+              "name": "Rob Bonta",
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 445-9555"
+              ],
+              "urls": [
+                "https://oag.ca.gov/",
+                "https://en.wikipedia.org/wiki/Rob_Bonta"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "AGRobBonta"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "AGRobBonta"
+                }
+              ]
+            },
+            {
+              "name": "Ricardo Lara",
+              "address": [
+                {
+                  "line1": "300 Capitol Mall",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(800) 927-4357"
+              ],
+              "urls": [
+                "http://www.insurance.ca.gov/",
+                "https://en.wikipedia.org/wiki/Ricardo_Lara"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "ICRicardoLara"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "ICRicardoLara"
+                }
+              ]
+            },
+            {
+              "name": "Fiona Ma",
+              "address": [
+                {
+                  "line1": "915 Capitol Mall",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 653-2995"
+              ],
+              "urls": [
+                "https://www.treasurer.ca.gov/",
+                "https://en.wikipedia.org/wiki/Fiona_Ma"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "CaliforniaSTO"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CalTreasurer"
+                }
+              ]
+            },
+            {
+              "name": "Malia M. Cohen",
+              "address": [
+                {
+                  "line1": "300 Capitol Mall",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 445-2636"
+              ],
+              "urls": [
+                "https://www.sco.ca.gov/index.html",
+                "https://en.wikipedia.org/wiki/Malia_Cohen"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "CAController"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CAController"
+                }
+              ]
+            },
+            {
+              "name": "Shirley N. Weber",
+              "address": [
+                {
+                  "line1": "1500 11th Street",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "zip": "95814"
+                }
+              ],
+              "party": "Democratic Party",
+              "phones": [
+                "(916) 653-6814"
+              ],
+              "urls": [
+                "https://www.sos.ca.gov/",
+                "https://en.wikipedia.org/wiki/Shirley_Weber"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "CaliforniaSOS"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "CASOSvote"
+                }
+              ]
+            },
+            {
+              "name": "Carol A. Corrigan",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Carol_Corrigan"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Goodwin H. Liu",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Goodwin_Liu"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Joshua P. Groban",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Joshua_Groban"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Kelli Evans",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Kelli_Evans"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Leondra R. Kruger",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Leondra_Kruger"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Martin J. Jenkins",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Martin_Jenkins"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Patricia Guerrero",
+              "address": [
+                {
+                  "line1": "350 McAllister Street",
+                  "city": "San Francisco",
+                  "state": "CA",
+                  "zip": "94102"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(415) 865-7000"
+              ],
+              "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Patricia_Guerrero_%28judge%29"
+              ],
+              "channels": [
+                {
+                  "type": "Twitter",
+                  "id": "CaSupremeCourt"
+                }
+              ]
+            },
+            {
+              "name": "Andrew N. Hamilton",
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 834-2450"
+              ],
+              "urls": [
+                "https://acdcweb01.ocgov.com/"
+              ],
+              "emails": [
+                "info@ac.ocgov.com"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "OCAuditor"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "OCAuditor"
+                }
+              ]
+            },
+            {
+              "name": "Claude Parrish",
+              "address": [
+                {
+                  "line1": "500 South Main Street",
+                  "city": "Orange",
+                  "state": "CA",
+                  "zip": "92868"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 834-2727"
+              ],
+              "urls": [
+                "https://www.ocassessor.gov/"
+              ],
+              "emails": [
+                "taxpayeradvocate@asr.ocgov.com"
+              ]
+            },
+            {
+              "name": "Shari L. Freidenrich",
+              "address": [
+                {
+                  "line1": "601 North Ross Street",
+                  "city": "Santa Ana",
+                  "state": "CA",
+                  "zip": "92701"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 834-3411",
+                "(714) 834-7625"
+              ],
+              "urls": [
+                "https://www.octreasurer.com/"
+              ],
+              "emails": [
+                "ttcinfo@ttc.ocgov.com",
+                "treasurer@ttc.ocgov.com"
+              ]
+            },
+            {
+              "name": "Todd Spitzer",
+              "address": [
+                {
+                  "line1": "300 North Flower Street",
+                  "city": "Santa Ana",
+                  "state": "CA",
+                  "zip": "92703"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 834-3600"
+              ],
+              "urls": [
+                "http://orangecountyda.org/",
+                "https://en.wikipedia.org/wiki/Todd_Spitzer"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "OCDAToddSpitzer"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "OCDAToddSpitzer"
+                }
+              ]
+            },
+            {
+              "name": "Al Mijares",
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 966-4001"
+              ],
+              "urls": [
+                "http://www.ocde.us/"
+              ],
+              "emails": [
+                "amijares@ocde.us"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "OrangeCountyDepartmentOfEducation"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "OCDeptofEd"
+                }
+              ]
+            },
+            {
+              "name": "Don Barnes",
+              "address": [
+                {
+                  "line1": "550 North Flower Street",
+                  "city": "Santa Ana",
+                  "state": "CA",
+                  "zip": "92703"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 647-7000"
+              ],
+              "urls": [
+                "https://ocsheriff.gov/",
+                "https://en.wikipedia.org/wiki/Don_Barnes_%28sheriff%29"
+              ],
+              "emails": [
+                "info@ocsheriff.gov"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "OCSheriff"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "OCSheriffBarnes"
+                }
+              ]
+            },
+            {
+              "name": "Hugh Nguyen",
+              "address": [
+                {
+                  "line1": "601 North Ross Street",
+                  "city": "Santa Ana",
+                  "state": "CA",
+                  "zip": "92701"
+                }
+              ],
+              "party": "Nonpartisan",
+              "phones": [
+                "(714) 834-2500"
+              ],
+              "urls": [
+                "https://ocrecorder.com/"
+              ],
+              "emails": [
+                "recorder.info@rec.ocgov.com"
+              ],
+              "channels": [
+                {
+                  "type": "Facebook",
+                  "id": "ocrecorder"
+                },
+                {
+                  "type": "Twitter",
+                  "id": "OCRecorder"
+                }
+              ]
+            }
+          ]
+        }
+  recorded_at: Sat, 25 Nov 2023 05:16:26 GMT
+recorded_with: VCR 6.1.0

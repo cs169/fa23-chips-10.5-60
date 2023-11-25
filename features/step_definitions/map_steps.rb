@@ -1,5 +1,29 @@
 # frozen_string_literal: true
 
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/vcr_cassettes/cucumber'
+  config.allow_http_connections_when_no_cassette = false
+  config.ignore_localhost = true
+  config.hook_into :webmock
+  config.filter_sensitive_data('<GOOGLE_CIVIC_API_KEY>') { Rails.application.credentials[:GOOGLE_API_KEY] }
+  config.default_cassette_options = {
+    record: :new_episodes
+  }
+end
+
+Before('@vcr') do |scenario|
+  name = scenario.name.gsub(/[^ ]/, '_')
+  VCR.insert_cassette(name)
+end
+
+After('@vcr') do
+  VCR.eject_cassette
+end
+
+Before do
+  Rails.application.load_seed
+end
+
 Given('I move to the California Page') do
   visit '/state/CA'
 end
@@ -21,19 +45,11 @@ Then('I should see myself be on the Florida state page') do
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  if page.respond_to? :should
-    expect(page).to have_content(text)
-  else
-    assert page.has_content?(text)
-  end
+  expect(page).to have_content(text)
 end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
-  if page.respond_to? :should
-    expect(page).to have_no_content(text)
-  else
-    assert page.has_no_content?(text)
-  end
+  expect(page).to_not have_content(text)
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|

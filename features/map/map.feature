@@ -1,3 +1,4 @@
+@vcr
 Feature: display a list of representatives when clicking on a county
 
 Scenario: clicking on Orange County, CA in the map
