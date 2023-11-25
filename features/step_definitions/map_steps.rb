@@ -28,8 +28,15 @@ Given('I move to the California Page') do
   visit '/state/CA'
 end
 
-Given('I navigate to the Orange County page') do
-  visit '/state/CA/county/059'
+Then(/^I navigate to the "([^"]+)" page$/) do |county|
+  county = county.gsub(' ', '_')
+  within_table('actionmap-state-counties-table') do
+    find("a##{county}").click
+  end
+end
+
+def finished_jquery_requests?
+  evaluate_script '(typeof jQuery === "undefined") || (jQuery.active == 0)'
 end
 
 Given('I move to the Florida Page') do
@@ -50,8 +57,4 @@ end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   expect(page).to_not have_content(text)
-end
-
-When /^(?:|I )go to (.+)$/ do |page_name|
-  visit path_to(page_name)
 end

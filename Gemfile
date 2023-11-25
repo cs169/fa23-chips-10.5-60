@@ -8,7 +8,7 @@ ruby '2.6.6' # Make sure that this matches .ruby-version file.
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.8.1'
 # Use Puma as the app server
-gem 'puma'
+gem 'puma', '~>6.4.0'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # Note: Pin the webpacker version to the same version used in package.json
@@ -52,6 +52,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'webdrivers'
 
   # Guard Plugins
   gem 'guard'

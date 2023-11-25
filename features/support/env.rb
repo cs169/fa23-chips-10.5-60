@@ -9,10 +9,7 @@
 # See: https://github.com/codecov/example-ruby
 
 require 'simplecov'
-require_relative 'factories'
-SimpleCov.start 'rails' do
-  add_filter 'lib'
-end
+SimpleCov.start 'rails'
 
 if ENV['CI']
   require 'codecov'
@@ -20,6 +17,7 @@ if ENV['CI']
 end
 
 require 'cucumber/rails'
+require_relative 'factories'
 
 # frozen_string_literal: true
 
