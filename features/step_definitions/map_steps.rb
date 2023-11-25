@@ -19,6 +19,7 @@ end
 Then('I should see myself be on the Florida state page') do
   expect(page).to have_current_path('/state/FL')
 end
+
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     expect(page).to have_content(text)
