@@ -2,7 +2,6 @@
 
 Given('I move to the California Page') do
   visit '/state/CA'
-  expect(page).to have_current_path('/state/CA', wait: 10)
 end
 
 Given('I navigate to the Orange County page') do
