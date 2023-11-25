@@ -1,0 +1,24 @@
+project:
+  name: 'CS169-fa23-60'
+  owner: 'fa23'
+  teamId: '60'
+  identities: {}
+  notifications:
+    email: 'dan.cooper@berkeley.edu'
+  members:
+    member1:
+      name: 'dan'
+      surname: 'cooper'
+      githubUsername: 'dan-j-cooper'
+    member2:
+      name: 'Arav'
+      surname: 'Misra'
+      githubUsername: 'aravmisra'
+    member3:
+      name: 'Yunshen'
+      surname: 'Song'
+      githubUsername: 'hsong159'
+    member4:
+      name: 'Timothy'
+      surname: 'Tucker'
+      githubUsername: 'timothytuckerr'
