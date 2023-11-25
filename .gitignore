@@ -85,4 +85,9 @@ yarn-debug.log*
 /node_modules
 /yarn-error.log
 yarn-debug.log*
+
+.DS_Store
+.yarnrc
+.yarn/
+
 .yarn-integrity
