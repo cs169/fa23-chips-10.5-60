@@ -14,11 +14,8 @@ VCR.configure do |config|
   }
 end
 
-Before do
-  create(:representative)
-end
-
 Before('@vcr') do |scenario|
+  create(:representative)
   name = scenario.name.gsub(/[^0-9A-Za-z_]/, '_')
   VCR.insert_cassette(name)
 end
