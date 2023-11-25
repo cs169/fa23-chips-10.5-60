@@ -25,7 +25,6 @@ After('@vcr') do
 end
 
 Given(/^I am on a representatives page$/) do
-  puts Representative.find_by(name: 'Gavin Newsom').inspect
   visit '/representatives/2'
 end
 
@@ -34,7 +33,6 @@ Given(/^I am on a the search page$/) do
 end
 
 Given(/^I am on a the news feed for a particular representative$/) do
-  puts Representative.find_by(name: 'Gavin Newsom').inspect
   visit '/representatives/2/news_items'
 end
 
