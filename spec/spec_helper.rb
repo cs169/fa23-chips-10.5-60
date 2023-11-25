@@ -15,6 +15,11 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'vcr'
+require 'webmock'
+require 'support/vcr_setup'
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -93,4 +98,15 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+  config.around(:each, :vcr) do |example|
+    name = example.metadata[:full_description]
+                  .split(/\s+/, 2)
+                  .join('/')
+                  .underscore.tr(' ', '_')
+                  .gsub(%r{/[^\w/]+/}, '')
+                  .gsub(%r{//$/}, '')
+    VCR.use_cassette(name, record: :new_episodes) do
+      example.call
+    end
+  end
 end

@@ -9,7 +9,10 @@
 # See: https://github.com/codecov/example-ruby
 
 require 'simplecov'
-SimpleCov.start 'rails'
+require_relative 'factories'
+SimpleCov.start 'rails' do
+  add_filter 'lib'
+end
 
 if ENV['CI']
   require 'codecov'
@@ -69,3 +72,5 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+World(FactoryBot::Syntax::Methods)
