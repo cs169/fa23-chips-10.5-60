@@ -15,7 +15,6 @@ VCR.configure do |config|
 end
 
 Before('@vcr') do |scenario|
-  create(:representative)
   name = scenario.name.gsub(/[^0-9A-Za-z_]/, '_')
   VCR.insert_cassette(name)
 end
@@ -25,6 +24,7 @@ After('@vcr') do
 end
 
 Given(/^I am on a representatives page$/) do
+  puts Representative.find_by(name: 'Gavin Newsom')
   visit '/representatives/1'
 end
 

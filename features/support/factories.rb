@@ -4,6 +4,7 @@ require 'factory_bot'
 
 FactoryBot.define do
   factory :representative do
+    id { 1 }
     name { 'Gavin Newsom' }
     street { '1303 10th Street' }
     city { 'Sacramento' }
