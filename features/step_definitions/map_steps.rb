@@ -1,5 +1,27 @@
 # frozen_string_literal: true
 
+require 'capybara/cucumber'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/vcr_cassettes/cucumber'
+  config.allow_http_connections_when_no_cassette = true
+  config.ignore_localhost = true
+  config.hook_into :webmock
+  config.filter_sensitive_data('<GOOGLE_CIVIC_API_KEY>') { Rails.application.credentials[:GOOGLE_API_KEY] }
+  config.default_cassette_options = {
+    record: :new_episodes
+  }
+end
+
+Before do |scenario|
+  VCR.turn_off!(ignore_cassettes: true) if scenario.source_tag_names.include?('@real_http')
+end
+
+After do |scenario|
+  VCR.turn_on! if scenario.source_tag_names.include?('@real_http')
+end
+
 Given('I move to the California Page') do
   visit '/state/CA'
 end
@@ -37,5 +59,7 @@ Then /^(?:|I )should not see "([^"]*)"$/ do |text|
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
-  visit path_to(page_name)
+  VCR.use_cassette('civicinfo_api') do
+    visit path_to(page_name)
+  end
 end
