@@ -594,26 +594,6 @@ module SeedData
                     }
                 ]
             }
-            # {
-            #     name:       'Alexander Ocasio Cortez',
-            #     news_items: [
-            #         {
-            #             title:       'What AOC and other House Dems want to do about Climate Change',
-            #             description: 'A new select committee report is perfectly in tune with the growing climate policy alignment on the left around standards, investments, and justice.',
-            #             link:        'https://www.vox.com/energy-and-environment/2020/6/30/21305891/aoc-climate-change-house-democrats-select-committee-report'
-            #         },
-            #         {
-            #             title:       'AOC among Dems who launch a fundraising campaign on a progressive platform',
-            #             description: 'Democratic Reps. Alexandria Ocasio-Cortez of New York, Ilhan Omar of Minnesota, Rashida Tlaib of Michigan and Ayanna Pressley of Massachusetts are launching a joint fundraising committee called the "Squad Victory Fund," the latest effort by the well-known freshmen lawmakers to support one another and their advocacy for progressive priorities.',
-            #             link:        'https://www.cnn.com/2020/07/01/politics/squad-ocasio-cortez-tlaib-omar-pressley/index.html'
-            #         },
-            #         {
-            #             title:       'AOC opts to skip debate citing social distancing rules',
-            #             description: 'New York Rep. Alexandria Ocasio-Cortez insisted Monday she’s “not skipping debates” like her predecessor, Joe Crowley, did to disastrous effect two years ago — even though she is ducking one Wednesday citing social distancing rules despite having been out at a George Floyd protest and other group events this month.',
-            #             link:        'https://nypost.com/2020/06/15/aoc-defends-decision-not-to-attend-wednesdays-debate-in-person/'
-            #         }
-            #     ]
-            # }
         ]
     end
 

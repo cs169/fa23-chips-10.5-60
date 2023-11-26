@@ -15,15 +15,16 @@ class MapController < ApplicationController
     @county_details = @state.counties.index_by(&:std_fips_code)
   end
 
-  # Render the map of a specific county.
+  # search for reps from this county
   def county
     @state = State.find_by(symbol: params[:state_symbol].upcase)
     handle_state_not_found && return if @state.nil?
 
     @county = get_requested_county @state.id
-    handle_county_not_found && return if @state.nil?
+    handle_county_not_found && return if @county.nil?
 
     @county_details = @state.counties.index_by(&:std_fips_code)
+    redirect_to search_representatives_path(address: @county.name, commit: 'search')
   end
 
   private
@@ -34,7 +35,7 @@ class MapController < ApplicationController
   end
 
   def handle_county_not_found
-    state_symbol = params[:state_symbol]
+    state_symbol = params[:state_symbol].upcase
     std_fips_code = params[:std_fips_code]
     redirect_to root_path, alert: "County with code '#{std_fips_code}' not found for #{state_symbol}"
   end

@@ -75,15 +75,16 @@ describe MapController, :vcr do
     # SETUP VARS
     let(:state_symbol) { 'WA' }
 
-    let(:state) { instance_double(State, id: 69, counties: counties) }
-    let(:county) { instance_double(County, name: 'Pierce County') }
     let(:counties) { instance_double(Array) }
+    let(:county) { instance_double(County, name: 'Pierce County') }
+    let(:state) { instance_double(State, id: 69, counties: counties) }
     let(:representatives) { instance_double(Array) }
 
     before do
       allow(State).to receive(:find_by).with(symbol: state_symbol).and_return(state)
       allow(counties).to receive(:index_by).and_return('county_details')
       allow(Representative).to receive(:find).with(county.name).and_return(representatives)
+      allow(County).to receive(:name).and_return('Pierce County')
     end
 
     context 'when state is found' do
