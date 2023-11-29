@@ -32,7 +32,8 @@ SeedData.representatives.each do |rep|
             representative: rep_model,
             title:          news_item[:title],
             description:    news_item[:description],
-            link:           news_item[:link]
+            link:           news_item[:link],
+            issue:          news_item[:issue],
         )
     end
 end
