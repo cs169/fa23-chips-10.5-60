@@ -6,8 +6,10 @@ describe NewsItemsController, :vcr do
   describe 'GET #index' do
     before do
       @rep = Representative.create(name: 'John Cena')
-      @article1 = NewsItem.create(title: 'Article 1', representative: @rep, link: 'https://google.com/news1', issue: 'Free Speech')
-      @article2 = NewsItem.create(title: 'Article 2', representative: @rep, link: 'https://google.com/news2', issue: 'Immigration')
+      @article1 = NewsItem.create(title: 'Article 1', representative: @rep,
+                                  link: 'https://google.com/news1', issue: 'Free Speech')
+      @article2 = NewsItem.create(title: 'Article 2', representative: @rep,
+                                  link: 'https://google.com/news2', issue: 'Immigration')
     end
 
     it 'assigns the articles to the representative' do
