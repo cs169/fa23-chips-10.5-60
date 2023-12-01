@@ -10,6 +10,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<GOOGLE_CIVIC_API_KEY>') { Rails.application.credentials[:GOOGLE_API_KEY] }
+  config.filter_sensitive_data('<PROPUBLICA_API_KEY>') { Rails.application.credentials[:PROPUBLICA_API_KEY] }
   config.default_cassette_options = {
     record: :new_episodes
   }
