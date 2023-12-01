@@ -39,5 +39,6 @@ Rails.application.routes.draw do
   get '/search/(:address)' => 'search#search', :as => 'search_representatives'
 
   # Routes for CampaignFinance
-  get '/campaign_finances/search/:cycle/:category/' => 'campaign_finance#search', :as => 'search_finance'
+  get '/campaign_finance', to: 'campaign_finance#index'
+  get '/campaign_finances/search' => 'campaign_finance#search', :as => 'search_finance'
 end

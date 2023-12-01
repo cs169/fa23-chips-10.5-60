@@ -4,6 +4,7 @@ require 'net/http'
 
 class CampaignFinanceController < ApplicationController
   before_action :validate_params, only: [:search]
+  def index; end
 
   def get_api_response(cycle, category)
     uri = URI("https://api.propublica.org/campaign-finance/v1/#{cycle}/candidates/leaders/#{category}.json")
@@ -45,5 +46,4 @@ class CampaignFinanceController < ApplicationController
 
     redirect_to root_path, alert: "Invalid cycle year: '#{params[:cycle]}'"
   end
-
 end

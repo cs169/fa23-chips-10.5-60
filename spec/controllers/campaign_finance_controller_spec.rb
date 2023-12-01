@@ -33,7 +33,7 @@ describe CampaignFinanceController, :vcr do
       ]
     end
 
-    it 'get_api_response returns example data' do
+    it 'get_api_response returns data' do
       controller = described_class.new
       results = controller.get_api_response(cycle, category)
       expect(results).to have_key('results')
@@ -42,7 +42,7 @@ describe CampaignFinanceController, :vcr do
       end
     end
 
-    context 'validate_params rejects' do
+    context 'when validate_params rejects' do
       it 'years outside range' do
         get :search, params: { cycle: 1900, category: 'pac-total' }
         expect(response).to have_http_status(:redirect)
@@ -59,10 +59,10 @@ describe CampaignFinanceController, :vcr do
       end
     end
 
-    context 'search enpoint' do
+    context 'when search enpoint' do
       it 'returns list of campaign_finance models' do
         get :search, params: params
-        expect(assigns(:campaign_finances)).to_not be_nil
+        expect(assigns(:campaign_finances)).not_to be_nil
         expect(response).to render_template('campaign_finance/search')
       end
     end
