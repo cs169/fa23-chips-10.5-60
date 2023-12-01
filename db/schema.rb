@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_18_060640) do
+ActiveRecord::Schema.define(version: 2023_11_30_060000) do
+
+  create_table "campaign_finances", force: :cascade do |t|
+    t.string "relative_uri"
+    t.string "name"
+    t.string "party"
+    t.string "state"
+    t.string "district"
+    t.string "comittee"
+    t.string "status"
+    t.decimal "total_from_individuals"
+    t.decimal "total_from_pacs"
+    t.decimal "total_contributions"
+    t.decimal "candidate_loans"
+    t.decimal "total_disbursements"
+    t.decimal "begin_cash"
+    t.decimal "end_cash"
+    t.decimal "total_refunds"
+    t.decimal "debts_owed"
+    t.date "date_coverage_from"
+    t.date "date_coverage_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "category"
+    t.integer "cycle"
+  end
 
   create_table "counties", force: :cascade do |t|
     t.string "name", null: false
