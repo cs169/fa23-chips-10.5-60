@@ -5,6 +5,7 @@ class CampaignFinance < ApplicationRecord
     finances = []
     finance_info['results'].each do |candidate_data|
       candidate = from_data(candidate_data, finance_info['category'], finance_info['cycle'])
+
       finances.push(candidate)
     end
     finances
@@ -14,7 +15,9 @@ class CampaignFinance < ApplicationRecord
   # At a later date this could be modified to update information
   # if necessary.
   def self.from_data(candidate_data, category, cycle)
+    Rails.logger.debug { "Raw Candidate Data: #{candidate_data.inspect}" }
     finance_attrs = build_finance_attributes(candidate_data, category, cycle)
+    Rails.logger.debug { "Attributes for CampaignFinance: #{finance_attrs}" }
     CampaignFinance.find_or_create_by(finance_attrs)
   end
 
@@ -41,14 +44,14 @@ class CampaignFinance < ApplicationRecord
   end
 
   def self.safe_string_access(object, attr)
-    object[attr] || ''
+    object[attr.to_s] || 'Default Value'
   end
 
   def self.safe_decimal_access(object, attr)
-    object[attr] || 0
+    object[attr.to_s] || 0
   end
 
   def self.safe_date_access(object, attr)
-    object[attr] || Time.zone.today
+    object[attr.to_s].presence || Time.zone.today
   end
 end
