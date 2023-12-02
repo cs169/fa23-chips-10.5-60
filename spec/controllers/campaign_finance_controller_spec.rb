@@ -5,6 +5,7 @@ require 'rails_helper'
 describe CampaignFinanceController, :vcr do
   describe 'CAMPAIGN FINANCE CONTROLLER TESTS' do
     let(:category) { 'pac-total' }
+    let(:controller) { described_class.new }
     let(:cycle) { '2020' }
     let(:params) { { cycle: cycle, category: category } }
     # from https://projects.propublica.org/api-docs/campaign-finance/candidates/#candidates
@@ -34,7 +35,6 @@ describe CampaignFinanceController, :vcr do
     end
 
     it 'get_api_response returns data' do
-      controller = described_class.new
       results = controller.get_api_response(cycle, category)
       expect(results).to have_key('results')
       results['results'] do |result|
