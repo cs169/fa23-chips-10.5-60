@@ -32,7 +32,8 @@ class CampaignFinance < ApplicationRecord
       comittee:               safe_string_access(candidate_data, :comittee),
       status:                 safe_string_access(candidate_data, :status),
       total_from_individuals: safe_decimal_access(candidate_data, :total_from_individuals),
-      total_contributions:    safe_decimal_access(candidate_data, :total_from_contributions),
+      total_from_pacs:        safe_decimal_access(candidate_data, :total_from_pacs),
+      total_contributions:    safe_decimal_access(candidate_data, :total_contributions),
       candidate_loans:        safe_decimal_access(candidate_data, :candidate_loans),
       total_disbursements:    safe_decimal_access(candidate_data, :total_disbursements),
       begin_cash:             safe_decimal_access(candidate_data, :begin_cash),
@@ -44,7 +45,7 @@ class CampaignFinance < ApplicationRecord
   end
 
   def self.safe_string_access(object, attr)
-    object[attr.to_s] || 'Default Value'
+    object[attr.to_s] || 'None'
   end
 
   def self.safe_decimal_access(object, attr)

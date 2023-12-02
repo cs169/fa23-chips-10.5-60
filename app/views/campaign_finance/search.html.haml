@@ -1,35 +1,47 @@
 .container-fluid
-  .row
-    .col-md-8.offset-md-2
-      .table-responsive-md.pt-5
-        %table.table.table-striped.table-hover#campaign_finances
-          %caption Table of Campaign Finances
-          %thead.thead-dark
-            %tr
-              %th Name
-              %th Party
-              %th State
-              %th District
-              %th Total from Individuals
-              %th Total from PACs
-              %th Total Contributions
-              %th Total Disbursements
-              %th Begin Cash
-              %th End Cash
-              %th Coverage From
-              %th Coverage To
-          %tbody
-            - @campaign_finances.each do |finance|
-              %tr
-                %td= finance.name
-                %td= finance.party
-                %td= link_to finance.state, finance.relative_uri
-                %td= finance.district
-                %td= number_to_currency(finance.total_from_individuals)
-                %td= number_to_currency(finance.total_from_pacs)
-                %td= number_to_currency(finance.total_contributions)
-                %td= number_to_currency(finance.total_disbursements)
-                %td= number_to_currency(finance.begin_cash)
-                %td= number_to_currency(finance.end_cash)
-                %td= finance.date_coverage_from.strftime('%Y-%m-%d')
-                %td= finance.date_coverage_to.strftime('%Y-%m-%d')
+    .row
+        .col-md-8.offset-md-2
+            - Rails.logger.debug { "Campaign Finances in View: #{@campaign_finances}" }
+            .table-responsive-md.pt-5
+                %table.table.table-striped.table-hover#campaign-finances
+                    %caption Table of Campaign Finances
+                    %thead.thead-dark
+                        %tr
+                            %th Name
+                            %th Party
+                            %th State
+                            %th District
+                            %th Comittee
+                            %th Status
+                            %th Total from Individuals
+                            %th Total from PACs
+                            %th Total Contributions
+                            %th Candidate Loans
+                            %th Total Disbursements
+                            %th Begin Cash
+                            %th End Cash
+                            %th Total Refunds
+                            %th Debts Owed
+                            %th Coverage From
+                            %th Coverage To
+                    %tbody
+                        - @campaign_finances.each do |finance|
+                            %tr
+                                %td= finance.name
+                                %td= finance.party
+                                %td= link_to(finance.state || 'Unknown', finance.relative_uri)
+                                %td= finance.district
+                                %td= finance.comittee
+                                %td= finance.status
+                                %td= number_to_currency(finance.total_from_individuals)
+                                %td= number_to_currency(finance.total_from_pacs)
+                                %td= number_to_currency(finance.total_contributions)
+                                %td= number_to_currency(finance.candidate_loans)
+                                %td= number_to_currency(finance.total_disbursements)
+                                %td= number_to_currency(finance.begin_cash)
+                                %td= number_to_currency(finance.end_cash)
+                                %td= number_to_currency(finance.total_refunds)
+                                %td= number_to_currency(finance.debts_owed)
+                                %td= finance.date_coverage_from.strftime('%Y-%m-%d')
+                                %td= finance.date_coverage_to.strftime('%Y-%m-%d')
+
