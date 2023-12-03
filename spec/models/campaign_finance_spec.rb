@@ -1,5 +1,1 @@
-require 'rails_helper'
-
-describe CampaignFinance, type: :model do
-
-end
+# frozen_string_literal: true

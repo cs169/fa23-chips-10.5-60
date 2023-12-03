@@ -45,5 +45,4 @@ class CampaignFinanceController < ApplicationController
 
     redirect_to root_path, alert: "Invalid cycle year: '#{params[:cycle]}'"
   end
-
 end
