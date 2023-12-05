@@ -23,6 +23,7 @@ AllCops:
         - db/schema.rb
         - db/seed_data.rb
         - db/seeds.rb
+        - db/migrate/*
         - features/step_definitions/web_steps.rb
         - features/support/paths.rb
         - features/support/selectors.rb
