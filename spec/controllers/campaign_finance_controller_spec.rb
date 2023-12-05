@@ -8,7 +8,6 @@ describe CampaignFinanceController, :vcr do
     let(:controller) { described_class.new }
     let(:cycle) { '2020' }
     let(:params) { { cycle: cycle, category: category } }
-    let(:controller) { described_class.new }
     # from https://projects.propublica.org/api-docs/campaign-finance/candidates/#candidates
     let(:names) do
       [
