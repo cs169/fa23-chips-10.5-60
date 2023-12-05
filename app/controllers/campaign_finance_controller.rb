@@ -4,6 +4,7 @@ require 'net/http'
 
 class CampaignFinanceController < ApplicationController
   before_action :validate_params, only: [:search]
+  def index; end
 
   def get_api_response(cycle, category)
     uri = URI("https://api.propublica.org/campaign-finance/v1/#{cycle}/candidates/leaders/#{category}.json")
@@ -12,6 +13,7 @@ class CampaignFinanceController < ApplicationController
     response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
       http.request(request)
     end
+    Rails.logger.debug { "Raw API Response: #{response.body}" }
     JSON.parse(response.body)
   end
 
@@ -19,6 +21,7 @@ class CampaignFinanceController < ApplicationController
     cycle = params[:cycle]
     category = params[:category]
     json = get_api_response(cycle, category)
+    Rails.logger.debug { "JSON Response: #{json.inspect}" }
     @campaign_finances = CampaignFinance.from_api(json)
 
     render 'campaign_finance/search'

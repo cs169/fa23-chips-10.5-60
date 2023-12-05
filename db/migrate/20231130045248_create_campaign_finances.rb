@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCampaignFinances < ActiveRecord::Migration[5.2]
   def change
     create_table :campaign_finances do |t|
@@ -19,7 +21,6 @@ class CreateCampaignFinances < ActiveRecord::Migration[5.2]
       t.decimal :debts_owed
       t.date :date_coverage_from
       t.date :date_coverage_to
-
       t.timestamps
     end
   end

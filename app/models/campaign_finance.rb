@@ -5,6 +5,7 @@ class CampaignFinance < ApplicationRecord
     finances = []
     finance_info['results'].each do |candidate_data|
       candidate = from_data(candidate_data, finance_info['category'], finance_info['cycle'])
+
       finances.push(candidate)
     end
     finances
@@ -52,14 +53,14 @@ class CampaignFinance < ApplicationRecord
   end
 
   def self.safe_string_access(object, attr)
-    object[attr] || ''
+    object[attr.to_s] || 'None'
   end
 
   def self.safe_decimal_access(object, attr)
-    object[attr] || 0
+    object[attr.to_s] || 0
   end
 
   def self.safe_date_access(object, attr)
-    object[attr] || Time.zone.today
+    object[attr.to_s].presence || Time.zone.today
   end
 end

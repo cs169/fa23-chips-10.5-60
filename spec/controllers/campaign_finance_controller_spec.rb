@@ -5,9 +5,9 @@ require 'rails_helper'
 describe CampaignFinanceController, :vcr do
   describe 'CAMPAIGN FINANCE CONTROLLER TESTS' do
     let(:category) { 'pac-total' }
+    let(:controller) { described_class.new }
     let(:cycle) { '2020' }
     let(:params) { { cycle: cycle, category: category } }
-    let(:controller) { described_class.new }
     # from https://projects.propublica.org/api-docs/campaign-finance/candidates/#candidates
     let(:names) do
       [
