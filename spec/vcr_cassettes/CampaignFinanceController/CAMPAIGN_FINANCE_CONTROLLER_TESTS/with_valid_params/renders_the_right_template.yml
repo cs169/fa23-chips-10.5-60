@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.propublica.org/campaign-finance/v1/2020/candidates/leaders/pac-total.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.propublica.org
+      X-Api-Key:
+      - "<PROPUBLICA_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '10006'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 03 Dec 2023 04:45:39 GMT
+      X-Amzn-Requestid:
+      - 6b27adc0-af9f-452b-9919-7b966bc8f8e3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+      X-Amz-Apigw-Id:
+      - PWYshGvAoAMEq0g=
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      X-Amzn-Trace-Id:
+      - Root=1-656c07e9-67f171b6169ead1f04013255;Sampled=0;lineage=5b3f852f:0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 140c2514fc51ebc92a4b9a7e5fd79f9a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX50-C3
+      X-Amz-Cf-Id:
+      - yrALQ9try6ewKBrmhtDDQj2Aw2tcAKCsYgW-gLhLZ1voYuD19UnxOg==
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","copyright":"Copyright (c) 2023 ProPublica Inc. All
+        Rights Reserved.","cycle":2020,"category":"Contributions from PACs","base_uri":"https://api.propublica.org/campaign-finance/v1/2020/","results":[{"relative_uri":"/candidates/S4GA11285.json","name":"PERDUE,
+        DAVID","party":"REP","state":"/races/GA.json","district":"00","committee":"/committees/C00547570.json","status":"I","total_from_individuals":75574377.42,"total_from_pacs":4851577.45,"total_contributions":80425954.87,"candidate_loans":0.0,"total_disbursements":88492643.47,"begin_cash":1703670.97,"end_cash":12414001.63,"total_refunds":162391.11,"debts_owed":781801.79,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S2KY00012.json","name":"MCCONNELL,
+        MITCH","party":"REP","state":"/races/KY.json","district":"00","committee":"/committees/C00193342.json","status":"I","total_from_individuals":59868152.25,"total_from_pacs":3602747.57,"total_contributions":63474756.83,"candidate_loans":0.0,"total_disbursements":64878657.61,"begin_cash":3595456.04,"end_cash":6811701.29,"total_refunds":2177094.1,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S4NC00162.json","name":"TILLIS,
+        THOM R. SEN.","party":"REP","state":"/races/NC.json","district":null,"committee":"/committees/C00545772.json","status":"I","total_from_individuals":17309037.37,"total_from_pacs":3510847.39,"total_contributions":20819884.76,"candidate_loans":0.0,"total_disbursements":24471182.55,"begin_cash":2025444.43,"end_cash":834908.56,"total_refunds":1009614.41,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S2MT00096.json","name":"DAINES,
+        STEVE","party":"REP","state":"/races/MT.json","district":"00","committee":"/committees/C00491357.json","status":"I","total_from_individuals":27135947.87,"total_from_pacs":3253617.22,"total_contributions":30440615.09,"candidate_loans":0.0,"total_disbursements":33226297.9,"begin_cash":1450176.34,"end_cash":107782.97,"total_refunds":532119.6,"debts_owed":44813.08,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/H8MA02041.json","name":"NEAL,
+        RICHARD E MR.","party":"DEM","state":"/races/MA.json","district":"01","committee":"/committees/C00226522.json","status":"I","total_from_individuals":1442401.7,"total_from_pacs":3127683.99,"total_contributions":4570085.69,"candidate_loans":0.0,"total_disbursements":5957630.7,"begin_cash":3308302.26,"end_cash":2384563.89,"total_refunds":40000.0,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S4MI00355.json","name":"PETERS,
+        GARY","party":"DEM","state":"/races/MI.json","district":null,"committee":"/committees/C00437889.json","status":"I","total_from_individuals":45404376.66,"total_from_pacs":3081173.48,"total_contributions":48488050.14,"candidate_loans":0.0,"total_disbursements":49846729.9,"begin_cash":1503727.91,"end_cash":1770272.68,"total_refunds":827632.14,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/H2IL13120.json","name":"DAVIS,
+        RODNEY L","party":"REP","state":"/races/IL.json","district":"13","committee":"/committees/C00521948.json","status":"I","total_from_individuals":2031252.94,"total_from_pacs":2862033.24,"total_contributions":4896461.18,"candidate_loans":0.0,"total_disbursements":4891001.05,"begin_cash":19576.43,"end_cash":140435.67,"total_refunds":67955.59,"debts_owed":31413.45,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S4CO00395.json","name":"GARDNER,
+        CORY","party":"REP","state":"/races/CO.json","district":"00","committee":"/committees/C00492454.json","status":"I","total_from_individuals":19777039.15,"total_from_pacs":2806812.74,"total_contributions":22637419.89,"candidate_loans":0.0,"total_disbursements":26813944.62,"begin_cash":1701437.57,"end_cash":1049344.21,"total_refunds":663383.06,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/H2MD05155.json","name":"HOYER,
+        STENY","party":"DEM","state":"/races/MD.json","district":"05","committee":"/committees/C00140715.json","status":"I","total_from_individuals":1208607.46,"total_from_pacs":2804040.0,"total_contributions":4012699.32,"candidate_loans":0.0,"total_disbursements":4363890.74,"begin_cash":634132.38,"end_cash":879066.75,"total_refunds":6970.09,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S8AZ00221.json","name":"MCSALLY,
+        MARTHA","party":"REP","state":"/races/AZ.json","district":"00","committee":"/committees/C00666040.json","status":"I","total_from_individuals":68221120.11,"total_from_pacs":2727159.02,"total_contributions":70995861.13,"candidate_loans":0.0,"total_disbursements":74361789.18,"begin_cash":923793.51,"end_cash":115303.73,"total_refunds":2088760.09,"debts_owed":585760.66,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S4IA00129.json","name":"ERNST,
+        JONI K","party":"REP","state":"/races/IA.json","district":null,"committee":"/committees/C00546788.json","status":"I","total_from_individuals":21793212.99,"total_from_pacs":2723058.53,"total_contributions":24562121.52,"candidate_loans":0.0,"total_disbursements":28527764.02,"begin_cash":1363149.69,"end_cash":528414.93,"total_refunds":115005.63,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S2TX00106.json","name":"CORNYN,
+        JOHN SEN","party":"REP","state":"/races/TX.json","district":null,"committee":"/committees/C00369033.json","status":"I","total_from_individuals":18604183.72,"total_from_pacs":2627788.43,"total_contributions":21277072.15,"candidate_loans":0.0,"total_disbursements":33771189.09,"begin_cash":5790126.35,"end_cash":633460.69,"total_refunds":147591.51,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S6ME00159.json","name":"COLLINS,
+        SUSAN M.","party":"REP","state":"/races/ME.json","district":"00","committee":"/committees/C00314575.json","status":"I","total_from_individuals":23106874.22,"total_from_pacs":2528268.36,"total_contributions":25685278.84,"candidate_loans":0.0,"total_disbursements":29200073.67,"begin_cash":2627724.77,"end_cash":1295192.48,"total_refunds":813715.66,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S6VA00093.json","name":"WARNER,
+        MARK ROBERT","party":"DEM","state":"/races/VA.json","district":"00","committee":"/committees/C00438713.json","status":"I","total_from_individuals":8161026.17,"total_from_pacs":2500949.0,"total_contributions":10661975.17,"candidate_loans":0.0,"total_disbursements":15905872.08,"begin_cash":3066836.33,"end_cash":388410.18,"total_refunds":112348.68,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S8MN00578.json","name":"SMITH,
+        TINA","party":"DEM","state":"/races/MN.json","district":"99","committee":"/committees/C00663781.json","status":"I","total_from_individuals":13356797.77,"total_from_pacs":2436253.69,"total_contributions":15798651.46,"candidate_loans":0.0,"total_disbursements":16100431.77,"begin_cash":433782.6,"end_cash":801755.36,"total_refunds":159507.93,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S0SC00149.json","name":"GRAHAM,
+        LINDSEY O.","party":"REP","state":"/races/SC.json","district":"00","committee":"/committees/C00458828.json","status":"I","total_from_individuals":102555262.01,"total_from_pacs":2420171.63,"total_contributions":105020333.64,"candidate_loans":0.0,"total_disbursements":98460665.23,"begin_cash":3200959.2,"end_cash":12487827.75,"total_refunds":2051224.33,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/H2IL17071.json","name":"BUSTOS,
+        CHERI","party":"DEM","state":"/races/IL.json","district":"17","committee":"/committees/C00498568.json","status":"I","total_from_individuals":2522536.65,"total_from_pacs":2349415.47,"total_contributions":4882481.66,"candidate_loans":0.0,"total_disbursements":6479373.11,"begin_cash":2334441.18,"end_cash":918624.26,"total_refunds":34516.78,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/H6TX08100.json","name":"BRADY,
+        KEVIN","party":"REP","state":"/races/TX.json","district":"08","committee":"/committees/C00311043.json","status":"I","total_from_individuals":671128.82,"total_from_pacs":2338484.0,"total_contributions":3009612.82,"candidate_loans":0.0,"total_disbursements":3200482.04,"begin_cash":722637.18,"end_cash":1102667.06,"total_refunds":5400.0,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S0GA00526.json","name":"LOEFFLER,
+        KELLY","party":"REP","state":"/races/GA.json","district":"00","committee":"/committees/C00729608.json","status":"I","total_from_individuals":55680489.09,"total_from_pacs":2283671.7,"total_contributions":58687253.09,"candidate_loans":23000000.0,"total_disbursements":70957315.59,"begin_cash":0.0,"end_cash":21255965.15,"total_refunds":77306.0,"debts_owed":1750000.0,"date_coverage_from":"2019-12-04","date_coverage_to":"2020-12-16"},{"relative_uri":"/candidates/H6OR04047.json","name":"DEFAZIO,
+        PETER A","party":"DEM","state":"/races/OR.json","district":"04","committee":"/committees/C00215905.json","status":"I","total_from_individuals":3047630.06,"total_from_pacs":2224957.53,"total_contributions":5277587.59,"candidate_loans":0.0,"total_disbursements":5884593.25,"begin_cash":1115826.13,"end_cash":517595.14,"total_refunds":96782.0,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"}]}'
+  recorded_at: Sun, 03 Dec 2023 04:45:39 GMT
+recorded_with: VCR 6.1.0
