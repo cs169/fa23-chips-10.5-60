@@ -28,8 +28,8 @@ class CampaignFinance < ApplicationRecord
   end
 
 
-  def self.build_finance_attributes(candidate_data, category, cycle)
-    { category:               category,
+  def self.build_finance_attributes(candidate_data, category, cycle){ 
+      category:               category,
       cycle:                  cycle,
       relative_uri:           safe_string_access(candidate_data, :relative_uri),
       name:                   safe_string_access(candidate_data, :name),
