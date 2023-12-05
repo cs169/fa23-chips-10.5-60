@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_30_060000) do
+ActiveRecord::Schema.define(version: 2023_12_05_212649) do
 
   create_table "campaign_finances", force: :cascade do |t|
     t.string "relative_uri"
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 2023_11_30_060000) do
     t.string "title", null: false
     t.string "link", null: false
     t.text "description"
-    t.string "issue", null: false
     t.integer "representative_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "issue", default: "default", null: false
     t.index ["representative_id"], name: "index_news_items_on_representative_id"
   end
 
