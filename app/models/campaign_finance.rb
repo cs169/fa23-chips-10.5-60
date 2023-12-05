@@ -27,8 +27,8 @@ class CampaignFinance < ApplicationRecord
     CampaignFinance.find_or_create_by(finance_attrs)
   end
 
-
-  def self.build_finance_attributes(candidate_data, category, cycle){ 
+  def self.build_finance_attributes(candidate_data, category, cycle)
+    {
       category:               category,
       cycle:                  cycle,
       relative_uri:           safe_string_access(candidate_data, :relative_uri),
