@@ -21,6 +21,7 @@ FactoryBot.define do
   factory :news_item do
     title { "Newsom warns that young adults are not 'invincible' to Coronavirus" }
     description { 'Gavin Newsom says things about stuff' }
+    issue { 'Student Loans' }
     link do
       'https://www.latimes.com/california/story/2020-07-06/' \
         'young-adult-who-think-they-are-invincible-hit-hard-' \
