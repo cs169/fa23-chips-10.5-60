@@ -27,7 +27,7 @@ class CampaignFinance < ApplicationRecord
       relative_uri:           safe_string_access(candidate_data, :relative_uri),
       name:                   safe_string_access(candidate_data, :name),
       party:                  safe_string_access(candidate_data, :party),
-      state:                  safe_string_access(candidate_data, :state),
+      state:                  safe_state_access(candidate_data, :state),
       district:               safe_string_access(candidate_data, :district),
       comittee:               safe_string_access(candidate_data, :comittee),
       status:                 safe_string_access(candidate_data, :status),
@@ -54,5 +54,11 @@ class CampaignFinance < ApplicationRecord
 
   def self.safe_date_access(object, attr)
     object[attr.to_s].presence || Time.zone.today
+  end
+
+  def self.safe_state_access(object, attr)
+    value = object[attr.to_s]
+    state_code = value.split('/').last.split('.').first
+    state_code.upcase
   end
 end
