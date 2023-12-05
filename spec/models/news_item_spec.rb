@@ -5,7 +5,9 @@ require 'rails_helper'
 describe NewsItem do
   describe 'find news items for given rep' do
     let(:representative) { create(:representative) }
-    let(:news_item) { create(:news_item, link: 'google.com/news', representative: representative) }
+    let(:news_item) do
+      create(:news_item, link: 'google.com/news', issue: 'Student Loans', representative: representative)
+    end
 
     it 'returns news for a given rep' do
       news_item

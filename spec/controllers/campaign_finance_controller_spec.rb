@@ -34,7 +34,7 @@ describe CampaignFinanceController, :vcr do
       ]
     end
 
-    it 'get_api_response returns data' do
+    it 'get_api_response returns example data' do
       results = controller.get_api_response(cycle, category)
       expect(results).to have_key('results')
       results['results'] do |result|
@@ -42,27 +42,31 @@ describe CampaignFinanceController, :vcr do
       end
     end
 
-    context 'when validate_params rejects' do
-      it 'years outside range' do
-        get :search, params: { cycle: 1900, category: 'pac-total' }
+    context 'with invalid parameters' do
+      it 'rejects years outside range' do
+        get :search, params: { cycle: 1900, category: category }
         expect(response).to have_http_status(:redirect)
       end
 
-      it 'non years for cycle' do
+      it 'rejects non years for cycle' do
         get :search, params: { cycle: 'hippo', category: 'pac-total' }
         expect(response).to have_http_status(:redirect)
       end
 
-      it 'invalid category' do
-        get :search, params: { cycle: 2020, category: 'cucumber' }
+      it 'rejects invalid category' do
+        get :search, params: { cycle: cycle, category: 'cucumber' }
         expect(response).to have_http_status(:redirect)
       end
     end
 
-    context 'when search enpoint' do
+    context 'with valid params' do
       it 'returns list of campaign_finance models' do
         get :search, params: params
         expect(assigns(:campaign_finances)).not_to be_nil
+      end
+
+      it 'renders the right template' do
+        get :search, params: params
         expect(response).to render_template('campaign_finance/search')
       end
     end

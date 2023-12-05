@@ -29,27 +29,27 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Dec 2023 04:40:18 GMT
+      - Sun, 03 Dec 2023 04:45:39 GMT
       X-Amzn-Requestid:
-      - 9330c672-bb62-4405-89ea-26c17850866d
+      - 6b27adc0-af9f-452b-9919-7b966bc8f8e3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
       - Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
       X-Amz-Apigw-Id:
-      - Pc9z9G3IoAMER1A=
+      - PWYshGvAoAMEq0g=
       Access-Control-Allow-Methods:
       - GET,OPTIONS
       X-Amzn-Trace-Id:
-      - Root=1-656ea9b2-20271aa529a298c35af6a3a4;Sampled=0;lineage=5b3f852f:0
+      - Root=1-656c07e9-67f171b6169ead1f04013255;Sampled=0;lineage=5b3f852f:0
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 fa3f15cd366c19b686cb5e8157aee206.cloudfront.net (CloudFront)
+      - 1.1 140c2514fc51ebc92a4b9a7e5fd79f9a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD66-C2
+      - LAX50-C3
       X-Amz-Cf-Id:
-      - pfBfDxmp59Y3neZSVQoJG2YeEjRl0Uf_RzNv_U0B9gFLF7AgRd4PUA==
+      - yrALQ9try6ewKBrmhtDDQj2Aw2tcAKCsYgW-gLhLZ1voYuD19UnxOg==
     body:
       encoding: UTF-8
       string: '{"status":"OK","copyright":"Copyright (c) 2023 ProPublica Inc. All
@@ -74,5 +74,5 @@ http_interactions:
         KEVIN","party":"REP","state":"/races/TX.json","district":"08","committee":"/committees/C00311043.json","status":"I","total_from_individuals":671128.82,"total_from_pacs":2338484.0,"total_contributions":3009612.82,"candidate_loans":0.0,"total_disbursements":3200482.04,"begin_cash":722637.18,"end_cash":1102667.06,"total_refunds":5400.0,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"},{"relative_uri":"/candidates/S0GA00526.json","name":"LOEFFLER,
         KELLY","party":"REP","state":"/races/GA.json","district":"00","committee":"/committees/C00729608.json","status":"I","total_from_individuals":55680489.09,"total_from_pacs":2283671.7,"total_contributions":58687253.09,"candidate_loans":23000000.0,"total_disbursements":70957315.59,"begin_cash":0.0,"end_cash":21255965.15,"total_refunds":77306.0,"debts_owed":1750000.0,"date_coverage_from":"2019-12-04","date_coverage_to":"2020-12-16"},{"relative_uri":"/candidates/H6OR04047.json","name":"DEFAZIO,
         PETER A","party":"DEM","state":"/races/OR.json","district":"04","committee":"/committees/C00215905.json","status":"I","total_from_individuals":3047630.06,"total_from_pacs":2224957.53,"total_contributions":5277587.59,"candidate_loans":0.0,"total_disbursements":5884593.25,"begin_cash":1115826.13,"end_cash":517595.14,"total_refunds":96782.0,"debts_owed":0.0,"date_coverage_from":"2019-01-01","date_coverage_to":"2020-12-31"}]}'
-  recorded_at: Tue, 05 Dec 2023 04:40:18 GMT
+  recorded_at: Sun, 03 Dec 2023 04:45:39 GMT
 recorded_with: VCR 6.1.0
